@@ -10,3 +10,7 @@ sortFunc.bubbleSort(stringArr);
 
 console.log(numberArr);
 console.log(stringArr);
+
+// legacy web platform API for encoding/decoding
+console.log(btoa("Encode base64"));
+console.log(atob("RW5jb2RlIGJhc2U2NA=="));
