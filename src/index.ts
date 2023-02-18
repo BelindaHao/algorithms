@@ -2,14 +2,18 @@ const sortFunc = require("./sort/sort");
 
 let numberArr: Array<number> = [4, 21, 19, 55, 21, 6];
 let stringArr: String[] = ['H1', 'h6', 'H2', 'h8'];
+
 sortFunc.bubbleSort(numberArr);
 sortFunc.bubbleSort(stringArr);
 
-// sortFunc.selectionSort(numberArr);
-// sortFunc.selectionSort(stringArr);
+sortFunc.selectionSort(numberArr);
+sortFunc.selectionSort(stringArr);
 
-console.log(numberArr);
-console.log(stringArr);
+console.log(`bubble    sort ${numberArr} to be     ${sortFunc.bubbleSort(numberArr)}`);
+console.log(`selection sort ${numberArr} to be     ${sortFunc.selectionSort(numberArr)}`);
+
+console.log(`bubble    sort ${stringArr} to be  ${sortFunc.bubbleSort(stringArr)}`);
+console.log(`selection sort ${stringArr} to be  ${sortFunc.selectionSort(stringArr)}`);
 
 // legacy web platform API for encoding/decoding
 console.log(btoa("Encode base64"));
