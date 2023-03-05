@@ -8,7 +8,6 @@ describe("test sort algorithms", () => {
         expect(sortedArr).toEqual([4, 6, 19, 21, 21, 55]);
     });
 
-    arr = [4, 21, 19, 55, 21, 6];
     it("should selection sort number array", () => {
         let sortedArr = sortFunc.selectionSort(arr);
         expect(sortedArr).toEqual([4, 6, 19, 21, 21, 55]);
@@ -16,4 +15,3 @@ describe("test sort algorithms", () => {
 });
 
 export {};
-
