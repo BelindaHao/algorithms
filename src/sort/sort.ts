@@ -34,4 +34,19 @@ function selectionSort<T>(arr:Array<T>): Array<T> {
     return sortingArray;
 }
 
-module.exports = { bubbleSort, selectionSort }
+function insertionSort<T>(arr:Array<T>) : Array<T> {
+    let sortingArray = [...arr];
+    let i:number, j:number;
+
+    for(i=1; i<sortingArray.length; i++) {
+        let value = sortingArray[i];
+        for(j=i-1; j>-1 && sortingArray[j]>value; j--) {
+            sortingArray[j+1] = sortingArray[j];            
+        }
+        sortingArray[j+1] = value;
+    }
+
+    return sortingArray;
+}
+
+module.exports = { bubbleSort, selectionSort, insertionSort }
