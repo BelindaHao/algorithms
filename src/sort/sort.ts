@@ -49,4 +49,35 @@ function insertionSort<T>(arr:Array<T>) : Array<T> {
     return sortingArray;
 }
 
+function quickSort<T>(arr:Array<T>) : Array<T> {
+    let sortingArray = [...arr];
+
+    return sortingArray;
+
+    function partition<T>(arr:Array<T>, lowIndex:number, highIndex:number) : number {
+        let pivot = Math.floor((lowIndex + highIndex)/2);
+        let pivotValue = arr[pivot];
+
+        while(lowIndex <= highIndex) {
+            while(pivotValue > arr[lowIndex]) {
+                lowIndex++;
+            }
+
+            while(pivotValue <= arr[highIndex]) {
+                highIndex--;
+
+            }
+            
+            if(lowIndex <= highIndex) {
+                [arr[highIndex], arr[lowIndex]] = [arr[lowIndex], arr[highIndex]];
+                lowIndex++;
+                highIndex--;
+            }
+        }
+        return lowIndex;
+    }
+    
+}
+
+
 module.exports = { bubbleSort, selectionSort, insertionSort }
