@@ -52,32 +52,48 @@ function insertionSort<T>(arr:Array<T>) : Array<T> {
 function quickSort<T>(arr:Array<T>) : Array<T> {
     let sortingArray = [...arr];
 
+    quickSortHelp(sortingArray, 0, sortingArray.length-1);
+
     return sortingArray;
 
+    function quickSortHelp<T>(arr:Array<T>, lowIndex:number, highIndex:number) {
+        if(lowIndex >= highIndex) {
+            return;
+        }
+
+        let index = partition(arr, lowIndex, highIndex);
+        quickSortHelp(arr, lowIndex, index-1);
+        quickSortHelp(arr, index+1, highIndex);
+    }
+
     function partition<T>(arr:Array<T>, lowIndex:number, highIndex:number) : number {
-        let pivot = Math.floor((lowIndex + highIndex)/2);
-        let pivotValue = arr[pivot];
+        let pivot = arr[lowIndex];
+        let pivotIndex = lowIndex;
+        lowIndex++;
 
         while(lowIndex <= highIndex) {
-            while(pivotValue > arr[lowIndex]) {
+            while(pivot <= arr[highIndex]) {
+                highIndex--;
+                
+            }
+            
+            while(pivot > arr[lowIndex]) {
                 lowIndex++;
             }
 
-            while(pivotValue <= arr[highIndex]) {
-                highIndex--;
-
-            }
-            
             if(lowIndex <= highIndex) {
                 [arr[highIndex], arr[lowIndex]] = [arr[lowIndex], arr[highIndex]];
                 lowIndex++;
                 highIndex--;
             }
         }
+
+        [arr[pivotIndex], arr[lowIndex]] = [arr[lowIndex], arr[pivotIndex]];
+
         return lowIndex;
     }
     
 }
 
 
-module.exports = { bubbleSort, selectionSort, insertionSort }
+module.exports = { bubbleSort, selectionSort, insertionSort, quickSort }

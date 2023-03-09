@@ -17,6 +17,11 @@ describe("test sort algorithms", () => {
         let sortedArr = sortFunc.insertionSort(arr);
         expect(sortedArr).toEqual([4, 6, 19, 21, 21, 55]);
     });
+
+    it("should quick sort number array", () => {
+        let sortedArr = sortFunc.quickSort(arr);
+        expect(sortedArr).toEqual([4, 6, 19, 21, 21, 55]);
+    });
 });
 
 export {};
