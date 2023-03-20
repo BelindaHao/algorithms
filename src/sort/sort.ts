@@ -69,26 +69,30 @@ function quickSort<T>(arr:Array<T>) : Array<T> {
     function partition<T>(arr:Array<T>, lowIndex:number, highIndex:number) : number {
         let pivot = arr[lowIndex];
         let pivotIndex = lowIndex;
-        lowIndex++;
+        
+        while(lowIndex < highIndex) {
+            while(arr[lowIndex] <= pivot && lowIndex < highIndex) {
+                lowIndex++;
+            }
 
-        while(lowIndex <= highIndex) {
-            while(pivot <= arr[highIndex]) {
+            while(arr[highIndex] >= pivot && lowIndex < highIndex) {
                 highIndex--;
-                
+            } 
+
+            if(lowIndex < highIndex) {
+                [arr[lowIndex], arr[highIndex]] = [arr[highIndex], arr[lowIndex]];
+            }
+            else if(pivot > arr[lowIndex]) {
+                [arr[pivotIndex], arr[lowIndex]] = [arr[lowIndex], arr[pivotIndex]];
+                return lowIndex;
+            }
+            else {
+                lowIndex--;
+                [arr[pivotIndex], arr[lowIndex]] = [arr[lowIndex], arr[pivotIndex]];
+                return lowIndex;
             }
             
-            while(pivot > arr[lowIndex]) {
-                lowIndex++;
-            }
-
-            if(lowIndex <= highIndex) {
-                [arr[highIndex], arr[lowIndex]] = [arr[lowIndex], arr[highIndex]];
-                lowIndex++;
-                highIndex--;
-            }
         }
-
-        [arr[pivotIndex], arr[lowIndex]] = [arr[lowIndex], arr[pivotIndex]];
 
         return lowIndex;
     }
