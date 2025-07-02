@@ -1,4 +1,5 @@
 const sortFunc = require("./sort/sort");
+const a = require("./pattern/frequenceCounter");
 
 let numberArr: Array<number> = [4, 21, 19, 55, 21, 6];
 let stringArr: String[] = ['H1', 'h6', 'H2', 'h8'];
@@ -18,3 +19,9 @@ console.log(`selection sort ${stringArr} to be  ${sortFunc.selectionSort(stringA
 // legacy web platform API for encoding/decoding
 console.log(btoa("Encode base64"));
 console.log(atob("RW5jb2RlIGJhc2U2NA=="));
+
+
+let arr1: Array<number> = [4, 21, 19, 55, 21, 6];
+let arr2: Array<number> = [55, 21, 6, 4, 21, 19];
+a.areSame(arr1, arr2);
+
