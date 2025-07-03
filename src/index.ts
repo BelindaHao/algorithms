@@ -22,6 +22,6 @@ console.log(atob("RW5jb2RlIGJhc2U2NA=="));
 
 
 let arr1: Array<number> = [4, 21, 19, 55, 21, 6];
-let arr2: Array<number> = [55, 21, 6, 4, 21, 19];
-a.areSame(arr1, arr2);
+let arr2: Array<number> = [55, 21, 7, 4, 21, 19];
+console.log(a.areSame(arr1, arr2));
 
