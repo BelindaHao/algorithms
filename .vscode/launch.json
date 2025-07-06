@@ -5,22 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "npm start",
-            "name": "Run npm start",
+            "name": "Jest Tests",
+            "program": "${workspaceFolder}\\node_modules\\jest\\bin\\jest.js",
             "request": "launch",
-            "type": "node-terminal"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
+            "args": [
+                "-i"
+            ],
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\test\\frequencyCounter.test.ts",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
-        }
+            "type": "node"
+        },
     ]
 }
