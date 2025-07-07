@@ -15,4 +15,21 @@ function areSame(arr1: number[], arr2: number[]): boolean {
     return true;
 }
 
-module.exports = { areSame }
+function areAnagrams(str1: String, str2: String): boolean {
+    if(str1.length !== str2.length) return false;
+
+    const frequencyMap: Record<string, number> = {};
+    const len = str1.length;
+
+    for(let i=0; i<len; i++){
+        const char1 = str1[i].toLowerCase();
+        const char2 = str2[i].toLowerCase();
+
+        frequencyMap[char1] = (frequencyMap[char1] || 0) + 1;
+        frequencyMap[char2] = (frequencyMap[char2] || 0) - 1;
+    }
+
+    return Object.values(frequencyMap).every(count => count === 0);
+}
+
+module.exports = { areSame, areAnagrams }

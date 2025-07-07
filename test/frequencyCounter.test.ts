@@ -1,4 +1,4 @@
-const { areSame } = require("../src/pattern/frequencyCounter")
+const { areSame, areAnagrams } = require("../src/pattern/frequencyCounter")
 
 describe("frequencyCounter pattern - areSame", () => {
     const orignalArray = [4, 21, 19, 55, 21, 6];
@@ -25,6 +25,25 @@ describe("frequencyCounter pattern - areSame", () => {
 
     it("return true for empty arrays", () => {
         expect(areSame([], [])).toBe(true);
+    })
+});
+
+describe("frequencyCounter pattern - areAnaGrams", () => {
+
+    it("returns true for anagrams case insensitive", () => {
+        expect(areAnagrams("HelloWorld", "dlrowolleh")).toBe(true);
+    });
+
+    it("returns true for anagrams case", () => {
+        expect(areAnagrams("silent", "listen")).toBe(true);
+    });
+
+    it("returns false for different strings", () => {
+       expect(areAnagrams("goodmorning", "goodafternoon")).toBe(false);
+    });
+
+    it("return true for empty strings", () => {
+        expect(areAnagrams("", "")).toBe(true);
     })
 });
 
