@@ -1,5 +1,6 @@
-function sumZero(arr: Array<number>): [number, number] | null {
+function sumZero(arr: number[]): [number, number] | null {
     for(let i = 0, j = arr.length-1; i < arr.length ;) {
+        if( i >= j) return null;
         if(arr[i] + arr[j] > 0){
             j--;
         }else if (arr[i] + arr[j] <0){
