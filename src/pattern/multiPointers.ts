@@ -1,14 +1,21 @@
 function sumZero(arr: number[]): [number, number] | null {
-    for(let i = 0, j = arr.length-1; i < arr.length ;) {
-        if( i >= j) return null;
-        if(arr[i] + arr[j] > 0){
-            j--;
-        }else if (arr[i] + arr[j] <0){
-            i++;
+    if ( arr.length === 0 ) return null;
+
+    let left = 0;
+    let right = arr.length -1;
+
+    while(left < right) {
+        const sum = arr[left] + arr[right];
+
+        if(sum === 0) {
+            return [arr[left], arr[right]];
+        } else if (sum > 0) {
+            right--;
         } else {
-            return [arr[i], arr[j]];
+            left++;
         }
     }
+
     return null;
 }
 
