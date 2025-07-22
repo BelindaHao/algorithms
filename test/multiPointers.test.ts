@@ -1,4 +1,4 @@
-const { sumZero } =  require('../src/pattern/multiPointers')
+const { sumZero, countUniqueValues } =  require('../src/pattern/multiPointers')
 
 describe("multiPointers pattern - sumZero", () => {
     it("should return the first pair of numbers that sum to zero", () => {
@@ -27,6 +27,14 @@ describe("multiPointers pattern - sumZero", () => {
 
     it("should return the first valid pair when multiple pairs sum to zero", () => {
         expect(sumZero([-4, -3, -2, 2, 3, 4])).toStrictEqual([-4, 4]);
+    });
+});
+
+
+describe("multiPointers pattern - countUniqueValues", () => {
+
+    it("should return the count of unique values", () => {
+        expect(countUniqueValues([-10, -6, 0, 0, 1, 1, 2, 3, 3])).toBe(6);
     });
 });
 
