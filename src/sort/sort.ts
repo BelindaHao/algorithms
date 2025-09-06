@@ -99,5 +99,43 @@ function quickSort<T>(arr:Array<T>) : Array<T> {
     
 }
 
+function mergeSort<T>(arr:Array<T>): Array<T> {
+    if(arr.length <= 1) return arr;
 
-module.exports = { bubbleSort, selectionSort, insertionSort, quickSort }
+    let midIndex = Math.floor(arr.length/2);
+    let leftArray = mergeSort(arr.slice(0, midIndex));
+    let rightArray = mergeSort(arr.slice(midIndex));
+    return merge(leftArray, rightArray);
+    
+
+    function merge<T>(arr1: Array<T>, arr2: Array<T>): Array<T> {
+        let result = new Array<T>();
+        let i = 0, j = 0;
+
+        while(i < arr1.length && j < arr2.length) {
+            if( arr1[i] < arr2[j] ) {
+                result.push(arr1[i]);
+                i++;
+            }
+            else {
+                result.push(arr2[j]);
+                j++;
+            }
+        }
+
+        while(i < arr1.length){
+            result.push(arr1[i]);
+            i++;
+        }
+
+        while(j < arr2. length) {
+            result.push(arr2[j]);
+            j++;
+        }
+
+        return result;
+    }
+}
+
+
+module.exports = { bubbleSort, selectionSort, insertionSort, quickSort, mergeSort }
