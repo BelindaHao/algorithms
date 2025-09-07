@@ -15,7 +15,7 @@ function areSame(arr1: number[], arr2: number[]): boolean {
     return true;
 }
 
-function areAnagrams(str1: String, str2: String): boolean {
+function areAnagrams(str1: string, str2: string): boolean {
     if(str1.length !== str2.length) return false;
 
     const frequencyMap: Record<string, number> = {};

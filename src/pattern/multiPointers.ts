@@ -1,5 +1,3 @@
-import { count } from "console";
-
 function sumZero(arr: number[]): [number, number] | null {
     if ( arr.length === 0 ) return null;
 

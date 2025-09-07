@@ -1,5 +1,7 @@
-function bubbleSort<T>(arr:Array<T>): Array<T> {
+function bubbleSort<T>(arr:Array<T>, compareFn?: (a: T, b: T) => number): Array<T> {
     let sortingArray = [...arr];
+    const cmp = compareFn || ((a: T, b: T) => (a > b ? 1 : a < b ? -1 : 0));    
+    
     for(let i=0; i<sortingArray.length-1; i++) {
         for(let j=i+1; j<sortingArray.length; j++) {
             if(sortingArray[i] > sortingArray[j]){
@@ -138,4 +140,4 @@ function mergeSort<T>(arr:Array<T>): Array<T> {
 }
 
 
-module.exports = { bubbleSort, selectionSort, insertionSort, quickSort, mergeSort }
+export { bubbleSort, selectionSort, insertionSort, quickSort, mergeSort }

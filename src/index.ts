@@ -2,7 +2,7 @@ const sortFunc = require("./sort/sort");
 const a = require("./pattern/frequencyCounter");
 
 let numberArr: Array<number> = [4, 21, 19, 55, 21, 6];
-let stringArr: String[] = ['H1', 'h6', 'H2', 'h8'];
+let stringArr: string[] = ['H1', 'h6', 'H2', 'h8'];
 
 sortFunc.bubbleSort(numberArr);
 sortFunc.bubbleSort(stringArr);
