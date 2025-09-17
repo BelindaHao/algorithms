@@ -27,6 +27,11 @@ describe("test sort algorithms", () => {
         let sortedArr = sortFunc.mergeSort(arr);
         expect(sortedArr).toEqual([4, 6, 19, 21, 21, 55]);
     });
+
+    it("should radix sort number array", () => {
+        let sortedArr = sortFunc.radixSort(arr);
+        expect(sortedArr).toEqual([4, 6, 19, 21, 21, 55]);
+    });
 });
 
 export {};
